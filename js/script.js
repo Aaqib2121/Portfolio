@@ -75,7 +75,69 @@ ScrollReveal({
     delay: 200
 });
 
-/*========== Show More section ==========*/
+/*========== Show skills section ==========*/
+// Define skills data
+const skillsData = [
+    {
+        category: "Frontend Development",
+        skills: [
+            { name: "HTML", percentage: 90, color: "#ff6347" },
+            { name: "CSS", percentage: 85, color: "#4682b4" },
+            { name: "JavaScript", percentage: 80, color: "#32cd32" },
+            { name: "React.js", percentage: 75, color: "#ff8c00" }
+            // Add more frontend skills as needed
+        ]
+    },
+    {
+        category: "Backend Development",
+        skills: [
+            { name: "Node.js", percentage: 85, color: "#ff6347" },
+            { name: "Express.js", percentage: 80, color: "#4682b4" },
+            { name: "MongoDB", percentage: 75, color: "#32cd32" }
+            // Add more backend skills as needed
+        ]
+    },
+    {
+        category: "Other Skills",
+        skills: [
+            { name: "UI/UX Design", percentage: 90, color: "#ff6347" },
+            { name: "Responsive Design", percentage: 85, color: "#4682b4" },
+            { name: "Version Control (Git)", percentage: 80, color: "#32cd32" }
+            // Add more other skills as needed
+        ]
+    }
+];
+
+// Function to generate HTML for skills
+function generateSkillsHTML(skills) {
+    return skills.map(skill => `
+        <li>
+            <h2>${skill.name}</h2>
+            <div class="progress-bar" style="--percentage: ${skill.percentage}%; background-color: ${skill.color}; animation: fillAnimation 1s ease forwards;"></div>
+            <div class="progress">${skill.percentage}%</div>
+        </li>
+    `).join('');
+}
+
+// Function to display skills
+function displaySkills() {
+    const frontendSkills = document.getElementById('frontend-skills');
+    const backendSkills = document.getElementById('backend-skills');
+    const otherSkills = document.getElementById('other-skills');
+
+    skillsData.forEach(category => {
+        if (category.category === 'Frontend Development') {
+            frontendSkills.innerHTML = generateSkillsHTML(category.skills);
+        } else if (category.category === 'Backend Development') {
+            backendSkills.innerHTML = generateSkillsHTML(category.skills);
+        } else if (category.category === 'Other Skills') {
+            otherSkills.innerHTML = generateSkillsHTML(category.skills);
+        }
+    });
+}
+
+// Display skills when the page is loaded
+window.onload = displaySkills;
 
 
   

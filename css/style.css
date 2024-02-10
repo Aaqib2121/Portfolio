@@ -954,3 +954,78 @@ img {
     border-radius: 20px;
 }
 
+/* CSS for skills section */
+.skills {
+    min-height: auto;
+    padding-bottom: 10rem;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill-category {
+    flex: 1;
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+.skill-category h1 {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 10px;
+    height: 30px;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 5px;
+    background-color: #007bff; /* Default color */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0; /* Initially 0 width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+/* CSS for skills section */
+@keyframes fillAnimation {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--percentage);
+    }
+}
+
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+
+    }
+}
+
+
